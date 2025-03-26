@@ -1,1 +1,1 @@
-# nodej-kzg
+# js-kzg
