@@ -51,3 +51,7 @@ export function hexlify(data: BytesLike): string {
     }
     return result;
 }
+
+export function uint8ToHex(data: Uint8Array): string {
+    return hexlify(data);
+}
