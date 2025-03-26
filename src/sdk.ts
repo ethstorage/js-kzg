@@ -1,8 +1,10 @@
 import workerpool from 'workerpool';
 import { hexlify, getBytes } from './utils/converter';
 
-export class KzgSDK {
+export abstract class kzgBase {
     private pool: workerpool.Pool;
+
+    protected abstract getWorkerPath(): string;
 
     constructor() {
         this.pool = workerpool.pool(this.getWorkerPath(), {
@@ -31,12 +33,5 @@ export class KzgSDK {
 
     private uint8ToHex(data: Uint8Array): string {
         return hexlify(data);
-    }
-
-    private getWorkerPath(): string {
-        if (typeof window !== 'undefined') {
-            return new URL('../dist/worker.js', import.meta.url).href;
-        }
-        return require.resolve('../dist/worker.js');
     }
 }

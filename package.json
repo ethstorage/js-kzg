@@ -1,22 +1,23 @@
 {
   "name": "js-kzg",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/ethstorage/js-kzg.git",
-  "author": "iteye <iteyelmp@gmail.com>",
   "license": "MIT",
+  "main": "./dist/sdk.cjs.cjs",
+  "types": "./dist/sdk.cjs.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/sdk.d.ts",
-      "import": "./dist/sdk.mjs",
-      "require": "./dist/sdk.js",
-      "browser": "./dist/browser/sdk.js"
+      "browser": "./dist/sdk.browser.mjs",
+      "node": {
+        "import": "./dist/sdk.mjs.mjs",
+        "require": "./dist/sdk.cjs.cjs"
+      },
+      "types": "./dist/sdk.cjs.d.ts",
+      "default": "./dist/sdk.mjs.mjs"
     }
   },
   "scripts": {
-    "build": "tsup --env.NODE_ENV production",
-    "dev": "tsup --watch",
-    "prepare": "npm run build"
+    "build": "npm run clean && tsup",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "micro-eth-signer": "^0.14.0",
