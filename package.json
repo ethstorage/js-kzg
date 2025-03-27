@@ -6,7 +6,7 @@
   "types": "./dist/sdk.cjs.d.ts",
   "exports": {
     ".": {
-      "browser": "./dist/sdk.browser.mjs",
+      "browser": "./dist/browser/sdk.mjs",
       "node": {
         "import": "./dist/sdk.mjs.mjs",
         "require": "./dist/sdk.cjs.cjs"
@@ -20,6 +20,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@paulmillr/trusted-setups": "^0.1.2",
+    "comlink": "^4.4.2",
     "micro-eth-signer": "^0.14.0",
     "workerpool": "^9.2.0"
   },

@@ -662,6 +662,11 @@
   resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.7.1.tgz#5738f6d765710921e7a751e00c20ae091ed8db0f"
   integrity sha512-B8XBPsn4vT/KJAGqDzbwztd+6Yte3P4V7iafm24bxgDe/mlRuK6xmWPuCNrKt2vDafZ8MfJLlchDG/vYafQEjQ==
 
+"@paulmillr/trusted-setups@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/@paulmillr/trusted-setups/-/trusted-setups-0.1.2.tgz#cec89fde3b349c7a91e4e6e4900cc8a153715e47"
+  integrity sha512-NKpT0G4Blj+Vp9lbfczb7iPJm3B4njpzX8NXiQs8G51N4CLndCvLqEvksFlTJbNLwl3iwsGZHSvJRdfhfOHLwQ==
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
@@ -1157,6 +1162,11 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+comlink@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.npmjs.org/comlink/-/comlink-4.4.2.tgz#cbbcd82742fbebc06489c28a183eedc5c60a2bca"
+  integrity sha512-OxGdvBmJuNKSCMO4NTl1L47VRp6xn2wG4F/2hYzB6tiCb709otOxtEYCSvK80PtjODfXXZu8ds+Nw5kVCjqd2g==
 
 commander@^4.0.0:
   version "4.1.1"

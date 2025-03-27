@@ -1,5 +1,5 @@
 import workerpool from 'workerpool';
-import { getBytes, uint8ToHex } from './utils/converter';
+import { getBytes, uint8ToHex } from '../utils/converter';
 
 export abstract class kzgBase {
     private pool: workerpool.Pool | null = null;

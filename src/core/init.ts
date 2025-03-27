@@ -1,5 +1,5 @@
 import { KZG } from 'micro-eth-signer/kzg';
-import { trustedSetup } from './trustedSetup';
+import { trustedSetup } from '@paulmillr/trusted-setups/fast.js';
 
 export class KZGInitializer {
     private static instance: KZG | null = null;

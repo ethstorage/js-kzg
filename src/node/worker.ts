@@ -1,4 +1,4 @@
-import { KZGInitializer } from './core/init';
+import { KZGInitializer } from '../core/init';
 import workerpool from 'workerpool';
 
 KZGInitializer.initialize();

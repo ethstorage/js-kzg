@@ -2,35 +2,36 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig([
     {
-        entry: ['src/worker.ts'],
+        entry: ['src/node/worker.ts'],
         format: ['cjs', 'esm'],
-        platform: 'node',
+        platform: 'neutral',
         outDir: 'dist',
         splitting: false,
         clean: true,
-        dts: true,
-        sourcemap: true,
         outExtension: ({ format }) => ({ js: format === 'cjs' ? '.cjs' : '.mjs' }),
     },
     {
-        entry: ['src/sdk.cjs.ts'],
+        entry: ['src/node/sdk.cjs.ts'],
         format: ['cjs'],
         outDir: 'dist',
         outExtension: () => ({ js: '.cjs' }),
         dts: true,
     },
     {
-        entry: ['src/sdk.mjs.ts'],
+        entry: ['src/node/sdk.mjs.ts'],
         format: ['esm'],
         outDir: 'dist',
         outExtension: () => ({ js: '.mjs' }),
-        dts: false,
     },
+
     {
-        entry: ['src/sdk.browser.ts'],
+        entry: ['src/browser/sdk.ts'],
         format: ['esm'],
-        outDir: 'dist',
-        outExtension: () => ({ js: '.mjs' }),
-        dts: false,
+        splitting: false,
+        noExternal: ['comlink'],
+        bundle: true,
+        clean: true,
+        sourcemap: true,
+        outDir: 'dist/browser',
     }
 ])
