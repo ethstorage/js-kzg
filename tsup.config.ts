@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig([
     {
-        entry: ['src/node/worker.ts'],
+        entry: ['src/node/worker/worker.ts'],
         format: ['cjs', 'esm'],
         platform: 'neutral',
         outDir: 'dist',

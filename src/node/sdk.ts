@@ -1,75 +1,72 @@
 import workerpool from 'workerpool';
+import os from 'os';
 import { getBytes, uint8ToHex } from '../utils/converter';
 
-export abstract class kzgBase {
+export abstract class KZGBase {
     private pool: workerpool.Pool | null = null;
 
     protected abstract getWorkerPath(): string;
 
     constructor() {
-        this.pool = workerpool.pool(this.getWorkerPath(), {
-            minWorkers: 'max'
-        });
+        this.createWorkerPool();
     }
 
-    // Method to close the worker pool after all tasks are done
-    async closeWorkerPool(): Promise<void> {
+    private createWorkerPool() {
         if (this.pool === null) {
-            throw new Error("Worker pool has already been closed.");
+            this.pool = workerpool.pool(this.getWorkerPath(), {
+                minWorkers: 3,
+                maxWorkers: os.cpus().length
+            });
         }
-        await this.pool.terminate();
-        this.pool = null;
+        return this.pool!;
     }
 
-    async blobToKzgCommitment(blob: Uint8Array): Promise<Uint8Array> {
-        if (this.pool === null) {
-            throw new Error("Cannot execute task on a closed or uninitialized worker pool.");
-        }
-
+    async computeCommitment(blob: Uint8Array): Promise<Uint8Array> {
+        const pool = this.createWorkerPool();
         const hexBlob = uint8ToHex(blob);
-        const result = await this.pool.exec('computeCommitment', [hexBlob]);
+        const result = await pool.exec('computeCommitment', [hexBlob]);
         return getBytes(result);
     }
 
-    async blobToKzgCommitmentBatch(blobs: Uint8Array[]): Promise<Uint8Array[]> {
-        if (this.pool === null) {
-            throw new Error("Cannot execute task on a closed or uninitialized worker pool.");
-        }
-        return await Promise.all(
-            blobs.map(blob => this.blobToKzgCommitment(blob))
-        );
+    async computeCommitmentBatch(blobs: Uint8Array[]): Promise<Uint8Array[]> {
+        this.createWorkerPool();
+        return await Promise.all(blobs.map(blob => this.computeCommitment(blob)));
     }
 
-    async computeBlobKzgProof(blob: Uint8Array, commitment: Uint8Array): Promise<Uint8Array> {
-        if (this.pool === null) {
-            throw new Error("Cannot execute task on a closed or uninitialized worker pool.");
-        }
+    async computeProof(blob: Uint8Array, commitment: Uint8Array): Promise<Uint8Array> {
+        const pool = this.createWorkerPool();
         const blobHex = uint8ToHex(blob);
         const commitmentHex = uint8ToHex(commitment);
-        const proofHex = await this.pool.exec('computeProof', [blobHex, commitmentHex]);
+        const proofHex = await pool.exec('computeProof', [blobHex, commitmentHex]);
         return getBytes(proofHex);
     }
 
-    async computeBlobKzgProofBatch(blobs: Uint8Array[], commitments: Uint8Array[]): Promise<Uint8Array[]> {
-        if (this.pool === null) {
-            throw new Error("Cannot execute task on a closed or uninitialized worker pool.");
-        }
+    async computeProofBatch(blobs: Uint8Array[], commitments: Uint8Array[]): Promise<Uint8Array[]> {
         if (blobs.length !== commitments.length) {
             throw new Error("The number of blobs and commitments must be the same.");
         }
+        this.createWorkerPool();
         return await Promise.all(
-            blobs.map((blob, index) =>
-                this.computeBlobKzgProof(blob, commitments[index])
-            )
+            blobs.map((blob, index) => this.computeProof(blob, commitments[index]))
         );
     }
 
-    async verifyBlobProof(blob: Uint8Array, commitment: Uint8Array): Promise<boolean> {
-        if (this.pool === null) {
-            throw new Error("Cannot execute task on a closed or uninitialized worker pool.");
-        }
+    async verifyProof(blob: Uint8Array, commitment: Uint8Array, proof: Uint8Array): Promise<boolean> {
+        const pool = this.createWorkerPool();
         const blobHex = uint8ToHex(blob);
         const commitmentHex = uint8ToHex(commitment);
-        return this.pool.exec('verifyProof', [blobHex, commitmentHex]);
+        const proofHex = uint8ToHex(proof);
+        return await pool.exec('verifyProof', [blobHex, commitmentHex, proofHex]);
+    }
+
+    async close(): Promise<void> {
+        try {
+            if (this.pool !== null) {
+                await this.pool.terminate(true);
+                this.pool = null;
+            }
+        } catch (error) {
+            console.error('Error terminating pool:', error);
+        }
     }
 }
