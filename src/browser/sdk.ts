@@ -19,7 +19,7 @@ const workerCode = `
 const blob = new Blob([workerCode], { type: 'application/javascript' });
 const workerUrl = URL.createObjectURL(blob);
 
-export abstract class KZG {
+export class KZG {
     private worker: Worker | null = null;
     private kzgWorker: any = null;
 

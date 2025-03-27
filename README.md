@@ -18,10 +18,10 @@ npm install js-kzg
 ## Usage
 
 ```sh
-import { Kzg } from 'js-kzg';
+import { KZG } from 'js-kzg';
 
-const kzg = new Kzg();
+const kzg = new KZG();
 const blobs = [blob1, blob2, blob3];
-const commitments = await kzg.blobToKzgCommitmentBatch(blobs);
+const commitments = await kzg.computeCommitmentBatch(blobs);
 console.log(commitments);
 ```
