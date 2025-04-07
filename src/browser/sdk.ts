@@ -3,16 +3,24 @@ import { wrap, releaseProxy } from 'comlink';
 
 const workerCode = `
     import { expose } from 'comlink';
-    import { KZG } from 'micro-eth-signer/kzg';
-    import { trustedSetup } from '@paulmillr/trusted-setups';
-     
-    const kzg = new KZG(trustedSetup);
+    import { loadKZG } from 'kzg-wasm';
+
+    const ready = loadKZG();
     const workerAPI = {
-        computeCommitment: (blobHex: string) => kzg.blobToKzgCommitment(blobHex),
-        computeProof: (blobHex: string, commitmentHex: string) => kzg.computeBlobProof(blobHex, commitmentHex),
-        verifyProof: (blobHex: string, commitmentHex: string, proofHex: string) => kzg.verifyBlobProof(blobHex, commitmentHex, proofHex)
+        computeCommitment: async (blobHex) => {
+            const kzg = await ready;
+            return kzg.blobToKZGCommitment(blobHex);
+        },
+        computeProof: async (blobHex, commitmentHex) => {
+            const kzg = await ready;
+            return kzg.computeBlobKZGProof(blobHex, commitmentHex);
+        },
+        verifyProof: async (blobHex, commitmentHex, proofHex) => {
+            const kzg = await ready;
+            return kzg.verifyBlobKZGProof(blobHex, commitmentHex, proofHex);
+        }
     };
-    
+
     expose(workerAPI);
 `;
 

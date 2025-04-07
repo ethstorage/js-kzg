@@ -1,7 +1,7 @@
 # js-kzg
 
 ## Overview
-This library provides a multi-threaded implementation of KZG commitments, optimized for handling multiple blobs efficiently. It is built on top of [@paulmillr/trusted-setups](https://www.npmjs.com/package/@paulmillr/trusted-setups) and [micro-eth-signer](https://www.npmjs.com/package/micro-eth-signer), ensuring fast and reliable cryptographic computations.
+This library provides a multi-threaded implementation of KZG commitments, optimized for handling multiple blobs efficiently. It is built on top of [kzg-wasm](https://github.com/ethereumjs/kzg-wasm), ensuring fast and reliable cryptographic computations.
 
 ## Features
 - Multi-threaded execution for faster computation.

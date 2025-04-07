@@ -1,19 +1,24 @@
 import workerpool from 'workerpool';
-import { trustedSetup } from '@paulmillr/trusted-setups/fast.js';
-import { KZG } from 'micro-eth-signer/kzg';
+import { loadKZG } from 'kzg-wasm';
 
-const kzg = new KZG(trustedSetup);
+async function main() {
+    const kzg = await loadKZG();
 
-workerpool.worker({
-    computeCommitment: (blobHex: string) => {
-        return kzg.blobToKzgCommitment(blobHex);
-    },
+    workerpool.worker({
+        computeCommitment: (blobHex: string) => {
+            return kzg.blobToKZGCommitment(blobHex);
+        },
 
-    computeProof: (blobHex: string, commitmentHex: string) => {
-        return kzg.computeBlobProof(blobHex, commitmentHex);
-    },
+        computeProof: (blobHex: string, commitmentHex: string) => {
+            return kzg.computeBlobKZGProof(blobHex, commitmentHex);
+        },
 
-    verifyProof: (blobHex: string, commitmentHex: string, proofHex: string) => {
-        return kzg.verifyBlobProof(blobHex, commitmentHex, proofHex);
-    }
+        verifyProof: (blobHex: string, commitmentHex: string, proofHex: string) => {
+            return kzg.verifyBlobKZGProof(blobHex, commitmentHex, proofHex);
+        }
+    });
+}
+
+main().catch((err) => {
+    console.error('[KZG Worker] Initialization failed:', err);
 });
