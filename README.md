@@ -24,4 +24,7 @@ const kzg = new KZG();
 const blobs = [blob1, blob2, blob3];
 const commitments = await kzg.computeCommitmentBatch(blobs);
 console.log(commitments);
+
+// After execution is completed, release the thread
+await kzg.close();
 ```
