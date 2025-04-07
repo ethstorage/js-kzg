@@ -1,6 +1,6 @@
 {
   "name": "js-kzg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "./dist/sdk.cjs.cjs",
   "types": "./dist/sdk.cjs.d.ts",
