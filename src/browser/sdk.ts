@@ -1,31 +1,6 @@
 import { getBytes, uint8ToHex } from '../utils/converter';
 import { wrap, releaseProxy } from 'comlink';
 
-const workerCode = `
-    import { expose } from 'comlink';
-    import { loadKZG } from 'kzg-wasm';
-
-    const ready = loadKZG();
-    const workerAPI = {
-        computeCommitment: async (blobHex) => {
-            const kzg = await ready;
-            return kzg.blobToKZGCommitment(blobHex);
-        },
-        computeProof: async (blobHex, commitmentHex) => {
-            const kzg = await ready;
-            return kzg.computeBlobKZGProof(blobHex, commitmentHex);
-        },
-        verifyProof: async (blobHex, commitmentHex, proofHex) => {
-            const kzg = await ready;
-            return kzg.verifyBlobKZGProof(blobHex, commitmentHex, proofHex);
-        }
-    };
-
-    expose(workerAPI);
-`;
-
-const blob = new Blob([workerCode], { type: 'application/javascript' });
-const workerUrl = URL.createObjectURL(blob);
 
 export class KZG {
     private worker: Worker | null = null;
@@ -33,6 +8,7 @@ export class KZG {
 
     private createWorker() {
         if (this.worker === null) {
+            const workerUrl = new URL('./worker.mjs', import.meta.url);
             this.worker = new Worker(workerUrl, { type: 'module' });
             this.kzgWorker = wrap(this.worker);
         }

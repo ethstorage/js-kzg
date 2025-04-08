@@ -24,14 +24,16 @@ export default defineConfig([
         outExtension: () => ({ js: '.mjs' }),
     },
 
+    // browser
     {
-        entry: ['src/browser/sdk.ts'],
+        entry: ['src/browser/sdk.ts', 'src/browser/worker.ts'],
         format: ['esm'],
-        splitting: false,
-        noExternal: ['comlink'],
-        bundle: true,
-        clean: true,
-        sourcemap: true,
+        platform: 'browser',
+        target: 'esnext',
         outDir: 'dist/browser',
+        clean: true,
+        splitting: false,
+        bundle: true,
+        noExternal: ['comlink', 'micro-eth-signer', '@paulmillr/trusted-setups'],
     }
 ])

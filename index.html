@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KZG SDK Test</title>
+</head>
+<body>
+<h1>KZG SDK Test</h1>
+<script type="module">
+    import { KZG } from './dist/browser/sdk.mjs';
+
+    function generateRandomBlob() {
+        const array = new Uint8Array(32*4096);
+        const hello = new TextEncoder().encode("hello");
+        array.set(hello, 0);
+        return array;
+    }
+    const randomBlob = generateRandomBlob();
+    const kzg = new KZG();
+
+    async function test() {
+        console.log('Commitment1111:');
+        const commitment = await kzg.computeCommitment(randomBlob);
+        console.log('Commitment:', commitment);
+
+        const blobs = [randomBlob];
+        const commitments = await kzg.computeCommitmentBatch(blobs);
+        console.log('Batch Commitments:', commitments);
+    }
+
+    test();
+</script>
+</body>
+</html>
