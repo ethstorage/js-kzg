@@ -1,18 +1,18 @@
 {
   "name": "js-kzg",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "license": "MIT",
-  "main": "./dist/sdk.cjs.cjs",
-  "types": "./dist/sdk.cjs.d.ts",
+  "main": "./dist/node/sdk.js",
+  "types": "./dist/node/sdk.d.ts",
   "exports": {
     ".": {
       "browser": "./dist/browser/sdk.mjs",
       "node": {
-        "import": "./dist/sdk.mjs.mjs",
-        "require": "./dist/sdk.cjs.cjs"
+        "import": "./dist/node/sdk.mjs",
+        "require": "./dist/node/sdk.js"
       },
-      "types": "./dist/sdk.cjs.d.ts",
-      "default": "./dist/sdk.mjs.mjs"
+      "types": "./dist/node/sdk.d.ts",
+      "default": "./dist/node/sdk.mjs"
     }
   },
   "scripts": {
@@ -21,11 +21,11 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@paulmillr/trusted-setups": "^0.1.2",
-    "comlink": "^4.4.2",
-    "kzg-wasm": "^0.5.0",
-    "micro-eth-signer": "^0.14.0",
-    "workerpool": "^9.2.0"
+    "rust-kzg-node": "^0.3.2",
+    "rust-kzg-node-wasm32-wasi": "^0.3.2"
+  },
+  "resolutions": {
+    "rust-kzg-node-*": "npm:undefined-package@0.0.0-invalid"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

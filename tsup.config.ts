@@ -1,39 +1,31 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig([
+    // Node SDK
     {
-        entry: ['src/node/worker/worker.ts'],
+        entry: ['src/node/sdk.ts'],
         format: ['cjs', 'esm'],
-        platform: 'neutral',
-        outDir: 'dist',
-        splitting: false,
+        platform: 'node',
+        outDir: 'dist/node',
         clean: true,
-        outExtension: ({ format }) => ({ js: format === 'cjs' ? '.cjs' : '.mjs' }),
-    },
-    {
-        entry: ['src/node/sdk.cjs.ts'],
-        format: ['cjs'],
-        outDir: 'dist',
-        outExtension: () => ({ js: '.cjs' }),
         dts: true,
-    },
-    {
-        entry: ['src/node/sdk.mjs.ts'],
-        format: ['esm'],
-        outDir: 'dist',
-        outExtension: () => ({ js: '.mjs' }),
+        splitting: false,
+        bundle: false,
+        noExternal: ['rust-kzg-node'],
+        sourcemap: true,
     },
 
     // browser
     {
-        entry: ['src/browser/sdk.ts', 'src/browser/worker.ts'],
+        entry: ['src/browser/sdk.ts'],
         format: ['esm'],
         platform: 'browser',
         target: 'esnext',
         outDir: 'dist/browser',
         clean: true,
-        splitting: false,
         bundle: true,
-        noExternal: ['comlink', 'micro-eth-signer', '@paulmillr/trusted-setups'],
+        splitting: false,
+        noExternal: ['rust-kzg-node-wasm32-wasi'],
+        sourcemap: true,
     }
 ])
