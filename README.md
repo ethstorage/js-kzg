@@ -20,11 +20,11 @@ npm install js-kzg
 ```sh
 import { KZG } from 'js-kzg';
 
-const kzg = new KZG();
+const kzg = KZG.create();
 const blobs = [blob1, blob2, blob3];
-const commitments = await kzg.computeCommitmentBatch(blobs);
+const commitments = await kzg.commitmentBatch(blobs);
 console.log(commitments);
 
-// After execution is completed, release the thread
-await kzg.close();
+const proofs = await kzg.cellProofBatch(blobs);
+console.log(proofs);
 ```

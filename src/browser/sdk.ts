@@ -2,8 +2,8 @@ import { loadTrustedSetup } from "../shared/core";
 import { KzgWrapper } from 'rust-kzg-node-wasm32-wasi';
 
 export class KZG {
-    static async create() {
-        const ts = await loadTrustedSetup();
+    static create() {
+        const ts = loadTrustedSetup();
         const inst = KzgWrapper.loadKzg(
             ts.g1Monomial,
             ts.g1Lagrange,

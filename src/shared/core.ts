@@ -1,6 +1,6 @@
 import trustedSetup from './trustedSetup'
 
-export async function loadTrustedSetup() {
+export function loadTrustedSetup() {
     const g1Monomial = hexToBytes(trustedSetup.g1_monomial)
     const g1Lagrange = hexToBytes(trustedSetup.g1_lagrange)
     const g2Monomial = hexToBytes(trustedSetup.g2_monomial)

@@ -20,9 +20,11 @@
     "build": "npm run clean && tsup",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "rust-kzg-node": "^0.3.2",
-    "rust-kzg-node-wasm32-wasi": "^0.3.2"
+    "rust-kzg-node": "^0.3.2"
   },
   "resolutions": {
     "rust-kzg-node-*": "npm:undefined-package@0.0.0-invalid"
@@ -30,12 +32,14 @@
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.13",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "http-server": "^14.1.1",
     "jest": "^29.7.0",
+    "rust-kzg-node-wasm32-wasi": "^0.3.2",
     "ts-jest": "^29.3.0",
     "ts-loader": "^9.5.2",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.8.2"
   }
 }
