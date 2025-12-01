@@ -1,8 +1,8 @@
-import { loadTrustedSetup } from "../shared/core";
+import { loadTrustedSetup } from "../shared/core.js";
 import { KzgWrapper } from 'rust-kzg-node-wasm32-wasi';
 
 export class KZG {
-    static create() {
+    static create(): KZG {
         const ts = loadTrustedSetup();
         const inst = KzgWrapper.loadKzg(
             ts.g1Monomial,
@@ -22,3 +22,5 @@ export class KZG {
         return this.kzg.computeCellProofsBatch(blobs);
     }
 }
+
+export default KZG;

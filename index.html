@@ -16,17 +16,17 @@
         array.set(hello, 0);
         return array;
     }
-    const randomBlob = generateRandomBlob();
-    const kzg = KZG.create();
 
     async function test() {
+        const randomBlob = generateRandomBlob();
+        const kzg = KZG.create();
         console.log('Commitment1111:');
         const blobs = [randomBlob];
-        const commitment = await kzg.commitmentBatch(blobs);
-        console.log('Commitment:', commitment);
+        const commitments = kzg.commitmentBatch(blobs);
+        console.log('commitments:', commitments);
 
-        const commitments = await kzg.computeCellProofsBatch(blobs);
-        console.log('Batch Commitments:', commitments);
+        const Proofs = kzg.cellProofBatch(blobs);
+        console.log('Proofs:', Proofs);
     }
 
     test();
