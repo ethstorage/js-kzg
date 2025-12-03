@@ -6,7 +6,7 @@
   "types": "./dist/node/sdk.d.ts",
   "exports": {
     ".": {
-      "browser": "./dist/browser/sdk.js",
+      "browser": "./dist/browser/sdk.mjs",
       "node": {
         "import": "./dist/node/sdk.mjs",
         "require": "./dist/node/sdk.js"
@@ -19,9 +19,8 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && npm run build:node && npm run build:browser",
     "build:node": "tsup",
-    "build:browser": "vite build --config vite.config.js",
-    "prepublishOnly": "npm run build",
-    "test": "vite"
+    "build:browser": "vite build --config vite.config.mjs",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"

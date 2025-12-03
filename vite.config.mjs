@@ -1,18 +1,16 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import wasm from 'vite-plugin-wasm';
-import topLevelAwait from 'vite-plugin-top-level-await';
 
 export default defineConfig({
 	build: {
 		lib: {
 			entry: {
-				sdk: resolve(__dirname, 'src/browser/sdk.ts'),
-				worker: resolve(__dirname, 'src/browser/worker.ts'),
+				sdk: resolve(__dirname, 'src/browser/sdk.ts')
 			},
 			formats: ['es'],
 			fileName: (format, entryName) => {
-				return entryName === 'worker' ? 'worker.mjs' : `${entryName}.js`;
+				return `${entryName}.mjs`;
 			}
 		},
 		outDir: 'dist/browser',
@@ -20,9 +18,6 @@ export default defineConfig({
 		target: 'es2022',
 		rollupOptions: {
 			output: {
-				entryFileNames: (chunkInfo) => {
-					return chunkInfo.name === 'worker' ? 'worker.mjs' : '[name].js';
-				},
 				assetFileNames: 'assets/[name][extname]',
 			}
 		}
@@ -31,7 +26,6 @@ export default defineConfig({
 		exclude: ['kzg-wasm'],
 	},
 	plugins: [
-		wasm(),
-		topLevelAwait(),
+		wasm()
 	]
 });

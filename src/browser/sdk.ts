@@ -1,6 +1,14 @@
 import { wrap, releaseProxy, Remote } from 'comlink';
-import { getBytes, uint8ToHex } from './converter';
-import type { KZGWorkerAPI } from './worker';
+import { uint8ToHex } from './converter';
+
+import KZGWorkerClass from './worker.ts?worker&inline';
+
+interface KZGWorkerAPI {
+    initKZG(): Promise<void>;
+    computeCommitment(blobHex: string): Promise<string>;
+    computeProof(blobHex: string, commitmentHex: string): Promise<string>;
+    computeCellsAndProofs(blobHex: string): Promise<[string[], string[]]>;
+}
 
 export class KZG {
     private constructor(
@@ -9,17 +17,12 @@ export class KZG {
     ) {}
 
     static async create(): Promise<KZG> {
-        const workerUrl = new URL('./worker.mjs', import.meta.url);
-        const worker = new Worker(workerUrl, {
-            type: 'module',
+        const worker = new KZGWorkerClass({
             name: 'kzg-worker'
         });
 
         worker.onerror = (error) => {
             console.error('KZG Worker error:', error);
-        };
-        worker.onmessageerror = (error) => {
-            console.error('KZG Worker message error:', error);
         };
 
         const api = wrap<KZGWorkerAPI>(worker);
