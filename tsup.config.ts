@@ -12,7 +12,7 @@ export default defineConfig([
         clean: true,
         dts: true,
         splitting: false,
-        bundle: false,
+        bundle: true,
         external: ['rust-kzg-node'],
     },
 ])
