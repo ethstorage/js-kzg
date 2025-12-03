@@ -803,6 +803,11 @@
     "@emnapi/runtime" "^1.5.0"
     "@tybys/wasm-util" "^0.10.1"
 
+"@rollup/plugin-virtual@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/@rollup/plugin-virtual/-/plugin-virtual-3.0.2.tgz#17e17eeecb4c9fa1c0a6e72c9e5f66382fddbb82"
+  integrity sha512-10monEYsBp3scM4/ND4LNH5Rxvh3e/cVeL3jWTgZ2SrQ+BmUoQcopVQvnaMcOnykb1VkxUFuDAN+0FnpTFRy2A==
+
 "@rollup/rollup-android-arm-eabi@4.53.3":
   version "4.53.3"
   resolved "https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.53.3.tgz#7e478b66180c5330429dd161bf84dad66b59c8eb"
@@ -931,6 +936,92 @@
   integrity sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==
   dependencies:
     "@sinonjs/commons" "^3.0.0"
+
+"@swc/core-darwin-arm64@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.15.3.tgz#bd0bd3ab7730e3ffa64cf200c0ed7c572cbaba97"
+  integrity sha512-AXfeQn0CvcQ4cndlIshETx6jrAM45oeUrK8YeEY6oUZU/qzz0Id0CyvlEywxkWVC81Ajpd8TQQ1fW5yx6zQWkQ==
+
+"@swc/core-darwin-x64@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.15.3.tgz#502b1e1c680df6b962265ca81a0c1a23e6ff070f"
+  integrity sha512-p68OeCz1ui+MZYG4wmfJGvcsAcFYb6Sl25H9TxWl+GkBgmNimIiRdnypK9nBGlqMZAcxngNPtnG3kEMNnvoJ2A==
+
+"@swc/core-linux-arm-gnueabihf@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.15.3.tgz#e32cc6a2e06a75060d6f598ba2ca6f96c5c0cc43"
+  integrity sha512-Nuj5iF4JteFgwrai97mUX+xUOl+rQRHqTvnvHMATL/l9xE6/TJfPBpd3hk/PVpClMXG3Uvk1MxUFOEzM1JrMYg==
+
+"@swc/core-linux-arm64-gnu@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.15.3.tgz#9b9861bc44059e393d4baf98b3cd3d6c4ea6f521"
+  integrity sha512-2Nc/s8jE6mW2EjXWxO/lyQuLKShcmTrym2LRf5Ayp3ICEMX6HwFqB1EzDhwoMa2DcUgmnZIalesq2lG3krrUNw==
+
+"@swc/core-linux-arm64-musl@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.15.3.tgz#f6388743e5a159018bd468e8f710940b2614384b"
+  integrity sha512-j4SJniZ/qaZ5g8op+p1G9K1z22s/EYGg1UXIb3+Cg4nsxEpF5uSIGEE4mHUfA70L0BR9wKT2QF/zv3vkhfpX4g==
+
+"@swc/core-linux-x64-gnu@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.15.3.tgz#15fea551c7a3aeb1bdc3ad5c652d73c9321ddba8"
+  integrity sha512-aKttAZnz8YB1VJwPQZtyU8Uk0BfMP63iDMkvjhJzRZVgySmqt/apWSdnoIcZlUoGheBrcqbMC17GGUmur7OT5A==
+
+"@swc/core-linux-x64-musl@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.15.3.tgz#d3f17bab4ffcadbb47f135e6a14d6f3e401af289"
+  integrity sha512-oe8FctPu1gnUsdtGJRO2rvOUIkkIIaHqsO9xxN0bTR7dFTlPTGi2Fhk1tnvXeyAvCPxLIcwD8phzKg6wLv9yug==
+
+"@swc/core-win32-arm64-msvc@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.15.3.tgz#9da386df7fed00b3473bcf4281ff3fcd14726d2c"
+  integrity sha512-L9AjzP2ZQ/Xh58e0lTRMLvEDrcJpR7GwZqAtIeNLcTK7JVE+QineSyHp0kLkO1rttCHyCy0U74kDTj0dRz6raA==
+
+"@swc/core-win32-ia32-msvc@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.15.3.tgz#c398d4f0f10ffec2151a79733ee1ce86a945a1ea"
+  integrity sha512-B8UtogMzErUPDWUoKONSVBdsgKYd58rRyv2sHJWKOIMCHfZ22FVXICR4O/VwIYtlnZ7ahERcjayBHDlBZpR0aw==
+
+"@swc/core-win32-x64-msvc@1.15.3":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.15.3.tgz#715596b034a654c82b03ef734a9b44c29bcd3a68"
+  integrity sha512-SpZKMR9QBTecHeqpzJdYEfgw30Oo8b/Xl6rjSzBt1g0ZsXyy60KLXrp6IagQyfTYqNYE/caDvwtF2FPn7pomog==
+
+"@swc/core@^1.12.14":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/core/-/core-1.15.3.tgz#2d0a5c4ac4c180c3dbf2f6d5d958b9fcbaa9755f"
+  integrity sha512-Qd8eBPkUFL4eAONgGjycZXj1jFCBW8Fd+xF0PzdTlBCWQIV1xnUT7B93wUANtW3KGjl3TRcOyxwSx/u/jyKw/Q==
+  dependencies:
+    "@swc/counter" "^0.1.3"
+    "@swc/types" "^0.1.25"
+  optionalDependencies:
+    "@swc/core-darwin-arm64" "1.15.3"
+    "@swc/core-darwin-x64" "1.15.3"
+    "@swc/core-linux-arm-gnueabihf" "1.15.3"
+    "@swc/core-linux-arm64-gnu" "1.15.3"
+    "@swc/core-linux-arm64-musl" "1.15.3"
+    "@swc/core-linux-x64-gnu" "1.15.3"
+    "@swc/core-linux-x64-musl" "1.15.3"
+    "@swc/core-win32-arm64-msvc" "1.15.3"
+    "@swc/core-win32-ia32-msvc" "1.15.3"
+    "@swc/core-win32-x64-msvc" "1.15.3"
+
+"@swc/counter@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz#cc7463bd02949611c6329596fccd2b0ec782b0e9"
+  integrity sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==
+
+"@swc/types@^0.1.25":
+  version "0.1.25"
+  resolved "https://registry.npmjs.org/@swc/types/-/types-0.1.25.tgz#b517b2a60feb37dd933e542d93093719e4cf1078"
+  integrity sha512-iAoY/qRhNH8a/hBvm3zKj9qQ4oc2+3w1unPJa2XvTK3XjeLXtzcCingVPw/9e5mn1+0yPqxcBGp9Jf0pkfMb1g==
+  dependencies:
+    "@swc/counter" "^0.1.3"
+
+"@swc/wasm@^1.12.14":
+  version "1.15.3"
+  resolved "https://registry.npmjs.org/@swc/wasm/-/wasm-1.15.3.tgz#8db42cf6dba45d58161ae6ccb61ab686274cccd2"
+  integrity sha512-NrjGmAplk+v4wokIaLxp1oLoCMVqdQcWoBXopQg57QqyPRcJXLKe+kg5ehhW6z8XaU4Bu5cRkDxUTDY5P0Zy9Q==
 
 "@tybys/wasm-util@^0.10.1":
   version "0.10.1"
@@ -1338,6 +1429,11 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+comlink@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.npmjs.org/comlink/-/comlink-4.4.2.tgz#cbbcd82742fbebc06489c28a183eedc5c60a2bca"
+  integrity sha512-OxGdvBmJuNKSCMO4NTl1L47VRp6xn2wG4F/2hYzB6tiCb709otOxtEYCSvK80PtjODfXXZu8ds+Nw5kVCjqd2g==
 
 commander@^4.0.0:
   version "4.1.1"
@@ -2349,6 +2445,11 @@ kleur@^3.0.3:
   resolved "https://registry.npmjs.org/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
+kzg-wasm@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/kzg-wasm/-/kzg-wasm-1.0.0.tgz#b8dfe7c64c249040be835e9ee227f13910cba354"
+  integrity sha512-jMvFK5uiV41BgcLrCaHbNeDeQeZdoTcqOYm7yS1Xdvl4MAykjou+SLlnt+P1bWz5C0YWHOmgUUjIpCuU83zNTA==
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
@@ -2812,73 +2913,73 @@ rollup@^4.34.8, rollup@^4.43.0:
     "@rollup/rollup-win32-x64-msvc" "4.53.3"
     fsevents "~2.3.2"
 
-rust-kzg-node-darwin-arm64@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-darwin-arm64/-/rust-kzg-node-darwin-arm64-0.4.0.tgz#ad36b2d9ef8c9bd95f48a62ee2765bac0bd65dfb"
-  integrity sha512-mDqqo+b89ZmUqr922I/Pk7Sayqu4EbowzQ4Z+Hmcn8i4PZODPo2vSNgdgmJZEmZ4fcV5ud96eX5rcB5D8MhuQw==
+rust-kzg-node-darwin-arm64@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-darwin-arm64/-/rust-kzg-node-darwin-arm64-1.0.0.tgz#928587562176a5e637d9f4307eb6d0e16587b586"
+  integrity sha512-YlrVxHZP7MTOLN4g+3v1u1q3iXrAELC5Tjdxe9RXuQA+I8eswd3AAJKnG/+CAEEl9aIZSm90AYWqgitvTY1B4w==
 
-rust-kzg-node-darwin-x64@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-darwin-x64/-/rust-kzg-node-darwin-x64-0.4.0.tgz#90241cef0b697979b660ac92577d6cd093c8c68d"
-  integrity sha512-KL7nn4YrTiqWPdAkwl6A2wTjd6Z3uEa70JJr2K2HT2dACotyAABT7pIY8PbOWaqFJB+/5oFRVYTMFczO31ldSQ==
+rust-kzg-node-darwin-x64@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-darwin-x64/-/rust-kzg-node-darwin-x64-1.0.0.tgz#ee05fcb4ddbc30e9fe0cc7e3431b2533be06e0fd"
+  integrity sha512-zlzIyg71IC7qBjlZpofrQ5QiVQtRItjXWDdbOzWxMYoZRbt9VDhNAVmN4Srkk63+WLuRaFQl1gIzvNvhAamFnw==
 
-rust-kzg-node-freebsd-x64@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-freebsd-x64/-/rust-kzg-node-freebsd-x64-0.4.0.tgz#56dfdd3a6d280fb2a807c4015d96f03adb436d62"
-  integrity sha512-zd0om0z3hq4oTquwJdIO4yJ9bQqwk1Gmnu4DNiXAQRcIuliDWdEz8pt3E22EF4ngdLnGVPu02ehdkkIHnbAq1Q==
+rust-kzg-node-freebsd-x64@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-freebsd-x64/-/rust-kzg-node-freebsd-x64-1.0.0.tgz#e3d088cc076ab1570cf9e8b44c16b364b8c3b605"
+  integrity sha512-lYuSjeSScgQgkt/yEFx7CrPvfMwXgteZZj12lIcduakk+qZafr9tTRs7vJx/1pT49BrmgUlbFhcS6KnWnhkThg==
 
-rust-kzg-node-linux-arm64-gnu@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-linux-arm64-gnu/-/rust-kzg-node-linux-arm64-gnu-0.4.0.tgz#a9ecf2aec6469ac3d4e7db5778efec64c2aa674a"
-  integrity sha512-BcoRYy5cZX/xgaO4WWxUMV0cT3yfeYJj3boHlOSYqEbV+3YtabyO5FGcUAqyOcETH2r/hB7D9OLqRCp0siTSgA==
+rust-kzg-node-linux-arm64-gnu@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-linux-arm64-gnu/-/rust-kzg-node-linux-arm64-gnu-1.0.0.tgz#534a3eafdcf05bebc027450afb6b3d1754a4e83b"
+  integrity sha512-AkGpx5kcr15VIuHLmIXJTLqTQ70zHdNeqebQwk1U+XeF9qI6fR807c9Pr7jISjQ4lFd/vQCs4d5ghkoq7HQC1A==
 
-rust-kzg-node-linux-arm64-musl@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-linux-arm64-musl/-/rust-kzg-node-linux-arm64-musl-0.4.0.tgz#9bef39b34cf8da61d38041f0d803266d98afc370"
-  integrity sha512-VtaWvjE6vrZjQW+s5H2Fd7xaTfyuPoQs12yshikCrS5MzMcNkB3R7Rr29dIiIBgfiWe2SwHalUyX9QwxYYMjaw==
+rust-kzg-node-linux-arm64-musl@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-linux-arm64-musl/-/rust-kzg-node-linux-arm64-musl-1.0.0.tgz#0eea6617f03e694e14827a89d8a41bb32c9d161f"
+  integrity sha512-RbgF1J4wTT7zPnjCMhfey12GGdVCMd2P3JXaVQaeaUODks1qGInd+jAPtxo+o8ritQthgh6boCjQgnD91gTxAw==
 
-rust-kzg-node-linux-x64-gnu@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-linux-x64-gnu/-/rust-kzg-node-linux-x64-gnu-0.4.0.tgz#426665e276be58f2fd8aec857165b0deb4224663"
-  integrity sha512-Nl4s+tjRxdeDCotQ9I611D4XneomOQd+Xa6xyM1/6wYV3sTUO14u+qjWZIDlQ2Li5YbxaHdjydkD8D3sDrC1jw==
+rust-kzg-node-linux-x64-gnu@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-linux-x64-gnu/-/rust-kzg-node-linux-x64-gnu-1.0.0.tgz#2342e6d52daca59210743e29ee5190c2e86d8ede"
+  integrity sha512-1txZo1tvAwqJ1BhcEmh4ScRj/b5DqwzEgDSzs6cclLqM4Sr7KLb47Z8eVzyanZOTGpg2pFUJ5LU3geuv8LwMhw==
 
-rust-kzg-node-linux-x64-musl@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-linux-x64-musl/-/rust-kzg-node-linux-x64-musl-0.4.0.tgz#34796d7f817f65a6ddb3860a597d336031f32655"
-  integrity sha512-mOouIrX36cZjFNyQ0sDaBwEMaHb+KUuYU0bBharVDLXuphb58O6tLSltU99M4mV097REUqv5umZwDRk8xPkUQA==
+rust-kzg-node-linux-x64-musl@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-linux-x64-musl/-/rust-kzg-node-linux-x64-musl-1.0.0.tgz#8d22cbe936df5eb96f02c78efe42ed4572d29015"
+  integrity sha512-bFA7eXIYDp6Ntcekj+fmSFgKOJel3yC79cjATkw4weDZRdwDqSz9TdxcmGvjIH4I6xY9w+ovSP4t7TxYNxIwkA==
 
-rust-kzg-node-wasm32-wasi@0.4.0, rust-kzg-node-wasm32-wasi@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-wasm32-wasi/-/rust-kzg-node-wasm32-wasi-0.4.0.tgz#78726b23eb6dbece9229ba5671f8a9d6e71f2fb8"
-  integrity sha512-mOXef8Ovcwdjla9I5Jvmk+oKRAujFDLJpnls/Y6UGVgbzNAIojLM1l3doMBrXnYVDRfbDNDJkoCeOL0nWE2TVw==
+rust-kzg-node-wasm32-wasi@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-wasm32-wasi/-/rust-kzg-node-wasm32-wasi-1.0.0.tgz#9718286cd3f66452681a32a6f374400bba57ebbf"
+  integrity sha512-4IvSJpcmNNCQ6THlnU4uhRV0yjjjaViqq5YQVU75Pme4EuG6wHIvF3ZXbAjGXKTWWHjiY6RuyPPLiUmf3UD3sg==
   dependencies:
     "@napi-rs/wasm-runtime" "^1.0.7"
 
-rust-kzg-node-win32-arm64-msvc@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-win32-arm64-msvc/-/rust-kzg-node-win32-arm64-msvc-0.4.0.tgz#e54eed602dd30a36affeeed166cf491d0d5e244a"
-  integrity sha512-7peEQ6wk4lIo1Ot5jzI4QEtPALs3HNVa9lVap00+I55nvs4tzJUpgWcyYkLRmqN5wi01xE06b4Q8i4ggumbvQA==
+rust-kzg-node-win32-arm64-msvc@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-win32-arm64-msvc/-/rust-kzg-node-win32-arm64-msvc-1.0.0.tgz#be264c0678acda7ad3e5f1cc72eec81ab4c045dd"
+  integrity sha512-DiiVoMWYY7W0yI2+LYQEpQAAIw56PJNx+NjhPNICAthjFG50mwzJPA38OR5IlxA/Vcy7kP7NdFgAuXrPUJH+bA==
 
-rust-kzg-node-win32-x64-msvc@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node-win32-x64-msvc/-/rust-kzg-node-win32-x64-msvc-0.4.0.tgz#491c5b35c96209919e7a405b3cc23ded22bbdd57"
-  integrity sha512-yxm0rIQt3I3MZ1lj8dgKCfXeUTZeGFc4wTdwf4nnGdzhAQG8IqvQik4NLHRy/bx8n51+Q5miGf0aW6VWFtgG7g==
+rust-kzg-node-win32-x64-msvc@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node-win32-x64-msvc/-/rust-kzg-node-win32-x64-msvc-1.0.0.tgz#4fb97f2ca311b72683fa8f25c56a6cb17210c484"
+  integrity sha512-iP53lhYBefG+ujyNiBd8yXQ6thrtFy8Yb9OPT6odYQp2k+IDBwQ0z2yQCYj5L/yJvoxuGTFLXsfnPZeiZu/M6A==
 
-rust-kzg-node@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/rust-kzg-node/-/rust-kzg-node-0.4.0.tgz#3d4549f621a713081e22ef0639ac48f79f52858a"
-  integrity sha512-tcHwkCTjIp2TinXvqFuYMelhYvTroSzRrYPvU1XMnGBoFLAr8X27yoNRfAXtNdz+athrvqwmgAndsukAh+aq0w==
+rust-kzg-node@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/rust-kzg-node/-/rust-kzg-node-1.0.0.tgz#a21d68fd6eb8ce6351400663d3846aa739859931"
+  integrity sha512-fNDdmxuFF7fqeMpkpVQfDlCaWtCiq37axNtwheOt4PB36DyzCMg+LJZJeRDS7e0UJh8p5mWGRnnNPkbY5bmsww==
   optionalDependencies:
-    rust-kzg-node-darwin-arm64 "0.4.0"
-    rust-kzg-node-darwin-x64 "0.4.0"
-    rust-kzg-node-freebsd-x64 "0.4.0"
-    rust-kzg-node-linux-arm64-gnu "0.4.0"
-    rust-kzg-node-linux-arm64-musl "0.4.0"
-    rust-kzg-node-linux-x64-gnu "0.4.0"
-    rust-kzg-node-linux-x64-musl "0.4.0"
-    rust-kzg-node-wasm32-wasi "0.4.0"
-    rust-kzg-node-win32-arm64-msvc "0.4.0"
-    rust-kzg-node-win32-x64-msvc "0.4.0"
+    rust-kzg-node-darwin-arm64 "1.0.0"
+    rust-kzg-node-darwin-x64 "1.0.0"
+    rust-kzg-node-freebsd-x64 "1.0.0"
+    rust-kzg-node-linux-arm64-gnu "1.0.0"
+    rust-kzg-node-linux-arm64-musl "1.0.0"
+    rust-kzg-node-linux-x64-gnu "1.0.0"
+    rust-kzg-node-linux-x64-musl "1.0.0"
+    rust-kzg-node-wasm32-wasi "1.0.0"
+    rust-kzg-node-win32-arm64-msvc "1.0.0"
+    rust-kzg-node-win32-x64-msvc "1.0.0"
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -3285,6 +3386,11 @@ util-deprecate@~1.0.1:
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
+uuid@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.npmjs.org/uuid/-/uuid-10.0.0.tgz#5a95aa454e6e002725c79055fd42aaba30ca6294"
+  integrity sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==
+
 v8-to-istanbul@^9.0.1:
   version "9.3.0"
   resolved "https://registry.npmjs.org/v8-to-istanbul/-/v8-to-istanbul-9.3.0.tgz#b9572abfa62bd556c16d75fdebc1a411d5ff3175"
@@ -3293,6 +3399,16 @@ v8-to-istanbul@^9.0.1:
     "@jridgewell/trace-mapping" "^0.3.12"
     "@types/istanbul-lib-coverage" "^2.0.1"
     convert-source-map "^2.0.0"
+
+vite-plugin-top-level-await@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/vite-plugin-top-level-await/-/vite-plugin-top-level-await-1.6.0.tgz#c6ed0be438a1c14f48b4f9a56da859c12821a7c2"
+  integrity sha512-bNhUreLamTIkoulCR9aDXbTbhLk6n1YE8NJUTTxl5RYskNRtzOR0ASzSjBVRtNdjIfngDXo11qOsybGLNsrdww==
+  dependencies:
+    "@rollup/plugin-virtual" "^3.0.2"
+    "@swc/core" "^1.12.14"
+    "@swc/wasm" "^1.12.14"
+    uuid "10.0.0"
 
 vite-plugin-wasm@^3.5.0:
   version "3.5.0"

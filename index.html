@@ -8,7 +8,7 @@
 <body>
 <h1>KZG SDK Test</h1>
 <script type="module">
-    import { KZG } from './dist/browser/sdk.mjs';
+    import { KZG } from './dist/browser/sdk.js';
 
     function generateRandomBlob() {
         const array = new Uint8Array(32*4096);
@@ -19,13 +19,13 @@
 
     async function test() {
         const randomBlob = generateRandomBlob();
-        const kzg = KZG.create();
+        const kzg = await KZG.create();
         console.log('Commitment1111:');
         const blobs = [randomBlob];
-        const commitments = kzg.commitmentBatch(blobs);
+        const commitments = await kzg.computeCommitmentBatch(blobs);
         console.log('commitments:', commitments);
 
-        const Proofs = kzg.cellProofBatch(blobs);
+        const Proofs = await kzg.computeCellsProofsBatch(blobs);
         console.log('Proofs:', Proofs);
     }
 
